@@ -6,7 +6,7 @@ module.exports = function (homebridge) {
     console.log(homebridge.platformAccessory);
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
-    homebridge.registerAccessory('rm -rf .git', 'GreeHeaterCooler', GreeHeaterCooler);
+    homebridge.registerAccessory('homebridge-gree-heatercooler', 'GreeHeaterCooler', GreeHeaterCooler);
 }
 
 function GreeHeaterCooler(log, config) {
