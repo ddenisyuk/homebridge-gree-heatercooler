@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ddenisyuk/homebridge-gree-heatercooler.git"
+    "url": "git+https://github.com/ddenisyuk/homebridge-gree-heatercooler.git"
   },
   "engines": {
     "node": ">=0.12.0",
@@ -19,5 +19,10 @@
   },
   "dependencies": {
     "npm": "^6.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ddenisyuk/homebridge-gree-heatercooler/issues"
+  },
+  "homepage": "https://github.com/ddenisyuk/homebridge-gree-heatercooler#readme",
+  "main": "index.js"
 }
