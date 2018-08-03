@@ -100,7 +100,7 @@ function GreeHeaterCooler(log, config) {
     this.discover();
 }
 
-GreeAC.prototype = {
+GreeHeaterCooler.prototype = {
 
     getServices: function () {
         return this.services;
