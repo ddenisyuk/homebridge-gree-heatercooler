@@ -1,4 +1,4 @@
-# Control Gree Air Conditioning with homekit
+# Control Gree and partners Air Conditioning with homekit
 
 This plugins is based on https://github.com/duculete/homebridge-gree-ac.
 Diff:
