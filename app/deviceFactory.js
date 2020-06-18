@@ -166,7 +166,7 @@ class Device {
             }
 
             // If package type is binding confirmation
-            if (pack.t === 'bindok' && that.device.id) {
+            if (pack.t === 'bindok') {
                 that._confirmBinding(message.cid, pack.key);
 
                 // Start requesting device status on set interval
