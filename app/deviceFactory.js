@@ -232,7 +232,11 @@ class Device {
             pack: encryptedMessage
         };
         const serializedRequest = new Buffer(JSON.stringify(request));
-        this.socket.send(serializedRequest, 0, serializedRequest.length, port, address);
+        try {
+            this.socket.send(serializedRequest, 0, serializedRequest.length, port, address);
+        } catch(e) {
+            console.log(e);
+        }
     };
 
     /**
