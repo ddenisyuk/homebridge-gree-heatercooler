@@ -166,7 +166,7 @@ class Device {
             }
 
             // If package type is binding confirmation
-            if (pack.t === 'bindok' && that.device.id) {
+            if (pack.t === 'bindok') {
                 that._confirmBinding(message.cid, pack.key);
 
                 // Start requesting device status on set interval
@@ -232,7 +232,11 @@ class Device {
             pack: encryptedMessage
         };
         const serializedRequest = new Buffer(JSON.stringify(request));
-        this.socket.send(serializedRequest, 0, serializedRequest.length, port, address);
+        try {
+            this.socket.send(serializedRequest, 0, serializedRequest.length, port, address);
+        } catch(e) {
+            console.log(e);
+        }
     };
 
     /**
