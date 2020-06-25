@@ -43,7 +43,7 @@ class Device {
         console.log("[GreeAC]: init deviceFactory on host %s [server port %s]", that.options.host, that.options.port);
 
         that.device = {};
-
+        that.device.props = {};
         // Initialize connection and bind with device
         that._connectToDevice(that.options.host, that.options.port);
 
@@ -252,7 +252,7 @@ class Device {
     };
 
     getPower() {
-        return this.device.props[cmd.power.code];
+        return this.device.props[cmd.power.code] || 0;
     };
 
     /**
@@ -269,7 +269,7 @@ class Device {
     };
 
     getTemp() {
-        return this.device.props[cmd.temperature.code];
+        return this.device.props[cmd.temperature.code] || 0;
     };
 
     /**
@@ -285,7 +285,7 @@ class Device {
     };
 
     getMode() {
-        return this.device.props[cmd.mode.code];
+        return this.device.props[cmd.mode.code] || 0;
     };
 
     /**
@@ -301,7 +301,7 @@ class Device {
     };
 
     getFanSpeed() {
-        return this.device.props[cmd.fanSpeed.code];
+        return this.device.props[cmd.fanSpeed.code] || 0;
     };
 
     /**
@@ -317,11 +317,11 @@ class Device {
     };
 
     getSwingVert() {
-        return this.device.props[cmd.swingVert.code];
+        return this.device.props[cmd.swingVert.code] || 0;
     };
 
     getRoomTemp() {
-        return this.device.props[cmd.TemSen.code];
+        return this.device.props[cmd.TemSen.code] || 0;
     };
 };
 
