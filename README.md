@@ -28,7 +28,7 @@ For each AC device you need to add an accessory and specify the IP address of th
             "host": "192.168.1.X",
             "name": "Living room AC",
             "acModel": "Gree V2",
-            "acTempSensorShift": 40,
+            "useTargetTempAsCurrent": true, // for AC W/O builded in temp sensor 
             "updateInterval": 10000
         },
         {

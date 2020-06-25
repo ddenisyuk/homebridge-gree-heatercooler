@@ -15,6 +15,7 @@ function GreeHeaterCooler(log, config) {
     this.host = config.host;
     this.updateInterval = config.updateInterval || 10000;
     this.acTempSensorShift = config.acTempSensorShift || 40;
+    this.useTargetTempAsCurrent = config.useTargetTempAsCurrent || false;
     this.model = config.acModel || "Gree HeaterCooler";
 
     this.services = [];
@@ -222,7 +223,8 @@ GreeHeaterCooler.prototype = {
 
     },
     getCurrentTemperature: function (callback) {
-        callback(null, this.device.getRoomTemp() - this.acTempSensorShift);
+        let temp = this.useTargetTempAsCurrent ? this.device.getTemp() : this.device.getRoomTemp() - this.acTempSensorShift;
+        callback(null, temp);
     },
     setTemperatureDisplayUnits: function (value, callback) {
         // F is unsupported
