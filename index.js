@@ -94,7 +94,7 @@ function GreeHeaterCooler(log, config) {
         .setCharacteristic(Characteristic.Name, this.name)
         .setCharacteristic(Characteristic.Manufacturer, 'Gree')
         .setCharacteristic(Characteristic.Model, this.model)
-        .setCharacteristic(Characteristic.SerialNumber, this.host.replace(/./g, ""));
+        .setCharacteristic(Characteristic.SerialNumber, this.host.replace(/\./g, ""));
 
     this.services.push(this.serviceInfo);
 
