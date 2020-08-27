@@ -124,7 +124,7 @@ class Device {
         };
         const toSend = new Buffer(JSON.stringify(request));
         this.socket.send(toSend, 0, toSend.length, device.port, device.address, error => {
-            console.log("[GreeAC]: _sendBindRequest socket error %s", address, error);
+            console.log("[GreeAC]: _sendBindRequest socket error", device, error);
         });
     }
 
