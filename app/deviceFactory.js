@@ -72,7 +72,9 @@ class Device {
                 this.socket.setBroadcast(false);
                 console.log("[GreeAC]: connecting to %s [using source port %d]", address, port);
                 this.socket.send(message, 0, message.length, that.options.defaultPort, address, error => {
-                    console.log("[GreeAC]: _connectToDevice socket error %s", address, error);
+                    if (error) {
+                        console.log("[GreeAC]: _connectToDevice socket error %s", address, error);
+                    }
                 });
             });
         } catch (err) {
@@ -124,7 +126,9 @@ class Device {
         };
         const toSend = new Buffer(JSON.stringify(request));
         this.socket.send(toSend, 0, toSend.length, device.port, device.address, error => {
-            console.log("[GreeAC]: _sendBindRequest socket error", device, error);
+            if (error) {
+                console.log("[GreeAC]: _sendBindRequest socket error", device, error);
+            }
         });
     }
 
@@ -250,7 +254,9 @@ class Device {
         const serializedRequest = new Buffer(JSON.stringify(request));
         try {
             this.socket.send(serializedRequest, 0, serializedRequest.length, port, address, error => {
-                console.log("[GreeAC]: _sendRequest socket error", error);
+                if (error) {
+                    console.log("[GreeAC]: _sendRequest socket error", error);
+                }
             });
         } catch (e) {
             console.log("[GreeAC]: _sendRequest error", e);
